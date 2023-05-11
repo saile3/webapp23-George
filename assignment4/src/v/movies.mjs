@@ -1,6 +1,6 @@
 /**
  * @fileOverview  View code of UI for managing Movie data
- * @person Gerd Wagner
+ * @person Gerd Wagner, Elias George
  */
 /***************************************************************
  Import classes, datatypes and utility procedures

@@ -1,6 +1,6 @@
 /**
  * @fileOverview  Auxiliary data management procedures
- * @person Gerd Wagner
+ * @person Gerd Wagner, Elias George
  */
 import Person from "../m/Person.mjs";
 import Movie from "../m/Movie.mjs";

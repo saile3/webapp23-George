@@ -2,7 +2,7 @@
  * @fileOverview  The model class Person with property definitions, (class-level)
  *                check methods, setter methods, and the special methods saveAll
  *                and retrieveAll
- * @person Gerd Wagner
+ * @person Gerd Wagner, Elias George
  */
 import Movie from "./Movie.mjs";
 import { cloneObject } from "../../lib/util.mjs";
