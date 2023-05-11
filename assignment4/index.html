@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Plain JS Unidirectional Association App</title>
+  <meta name="description" content="A plain JS app with unidirectional associations." />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="theme-color" content="#ffffff" />
+  <link rel="stylesheet" href="css/normalize.css" />
+  <link rel="stylesheet" href="css/main.css" />
+
+  <script type="module">
+    import { clearData, generateTestData } from "./src/c/app.mjs";
+    const clearButton = document.getElementById("clearData"),
+      generateTestDataButtons = document.querySelectorAll("button.generateTestData");
+    // Set event handlers for the buttons "clearData" and "generateTestData"
+    clearButton.addEventListener("click", clearData);
+    for (const btn of generateTestDataButtons) {
+      btn.addEventListener("click", generateTestData);
+    }
+  </script>
+</head>
+
+<body>
+  <header>
+    <div class="wrapper clearfix">
+      <div class="title">
+        <h1>Movie Library</h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="persons.html">Persons</a></li>
+          <li><a href="movies.html">Movies</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <div class="wrapper clearfix">
+      <p>This app supports the following operations:</p>
+      <div class="two-col-menu">
+        <ul class="menu">
+          <li><a href="persons.html">Manage person data</a></li>
+          <li><a href="movies.html">Manage movie data</a></li>
+        </ul>
+        <ul class="menu">
+          <li><button type="button" class="generateTestData">Generate test data</button></li>
+          <li><button type="button" id="clearData">Clear database</button></li>
+        </ul>
+      </div>
+      <p>For playing with the app, you may first want to
+        <button type="button" class="generateTestData">Generate test data</button>
+        and then view it (e.g. by choosing "Manage movies" and then "Retrieve and list all movies"). For observing
+        the internal status and error messages, turn on the JavaScript console.
+      </p>
+    </div>
+  </main>
+  <footer>
+    <div class="foot-content wrapper">
+      Copyright © 2013-2021 Gerd Wagner,
+      <a href="https://www.b-tu.de/fg-internet-technologie/">Chair of Internet Technology</a>,
+      Brandenburg University of Technology, Germany. The code of this tutorial web app is licensed under
+      <a rel="license" href="https://www.codeproject.com/info/cpol10.aspx">The Code Project Open License (CPOL)</a>,
+      implying that the code is provided "as-is", can be modified to create derivative works,
+      can be redistributed, and can be used in commercial applications, but the associated article
+      must not be distributed or republished without the copyright holder's consent.
+    </div>
+  </footer>
+</body>
+
+</html>
