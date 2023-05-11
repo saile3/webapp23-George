@@ -143,7 +143,11 @@ createFormEl["commit"].addEventListener("click", function () {
  * Use case Update Movie
 **********************************************/
 const updateFormEl = document.querySelector("section#Movie-U > form"),
+  updateDirectorEl = updateFormEl["selectDirector"],
+  updateReleaseDate = updateFormEl["releaseDate"],
   updSelMovieEl = updateFormEl["selectMovie"];
+
+
 document.getElementById("Update").addEventListener("click", function () {
   // reset selection list (drop its previous contents)
   updSelMovieEl.innerHTML = "";
@@ -154,6 +158,7 @@ document.getElementById("Update").addEventListener("click", function () {
   document.getElementById("Movie-U").style.display = "block";
   updateFormEl.reset();
 });
+
 /**
  * handle movie selection events: when a movie is selected,
  * populate the form with the data of the selected movie
@@ -182,6 +187,22 @@ updSelMovieEl.addEventListener("change", function () {
     selectPersonsWidget.innerHTML = "";
     saveButton.disabled = true;
   }
+  //setup event listener for updates
+  updateFormEl.title.addEventListener("input", function () {
+    updateFormEl.title.setCustomValidity(
+      Movie.checkTitle(updateFormEl["title"].value).message);
+  });
+
+  updateReleaseDate.addEventListener("input", function () {
+    updateReleaseDate.setCustomValidity(
+      Movie.checkReleaseDate(updateFormEl["releaseDate"].value).message);
+  });
+
+  updateDirectorEl.addEventListener("click", function () {
+    updateDirectorEl.setCustomValidity(
+      Movie.checkDirector(updateFormEl["selectDirector"].selectedIndex).message);
+  });
+
 });
 // handle Save button click events
 updateFormEl["commit"].addEventListener("click", function () {

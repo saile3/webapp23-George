@@ -133,7 +133,7 @@ function createMultiSelectionWidget(widgetContainerEl, selection, selectionRange
         listItemEl = btnEl.parentNode,
         listEl = listItemEl.parentNode;
       if (listEl.children.length <= minCard) {
-        alert("A book must have at least one author!");
+        alert("A Movie must have at least one actor!");
         return;
       }
       if (listItemEl.classList.contains("removed")) {

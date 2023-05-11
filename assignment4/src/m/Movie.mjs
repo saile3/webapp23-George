@@ -270,6 +270,7 @@ Movie.update = function ({ movieId, title, releaseDate,
         movie.removeActors(person_id);
       }
     }
+
     // publisher_id may be the empty string for unsetting the optional property
     if (director_id && (!movie.director && director_id ||
       movie.director && movie.director.name !== director_id)) {
